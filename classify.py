@@ -7,8 +7,15 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 import pandas as pd
+import os
 
-df = pd.read_csv('~/Code/TSFTV/taylor_swift_tracks.csv')
+# Get the current directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Load the CSV file from the current directory
+file_path = os.path.join(current_dir, 'taylor_swift_tracks.csv')
+df = pd.read_csv(file_path)
+
 label_encoder = LabelEncoder()
 df['key'] = label_encoder.fit_transform(df['key'])
 df = df.drop(['track_id', 'album_name', 'album_id', 'artist_name', 'artist_id', 'release_date', 'mode', 'time_signature'], axis=1)
@@ -18,7 +25,7 @@ numerical_cols = ['danceability', 'energy', 'loudness', 'speechiness', 'acoustic
 df[numerical_cols] = (df[numerical_cols] - df[numerical_cols].mean()) / df[numerical_cols].std()
 
 # Create a new column 'label' based on the track name
-df['label'] = df['track_name'].apply(lambda x: 1 if 'From The Vault' not in x else 0)
+df['label'] = df['track_name'].apply(lambda x: 1 if 'Taylor\'s Version' in x else 0)
 
 # Features (X) and Labels (y)
 X = df.drop(['label', 'track_name'], axis=1)  # Drop 'label' and 'track_name' columns
@@ -67,7 +74,7 @@ criterion = nn.BCELoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 
 # Training the model
-num_epochs = 100
+num_epochs = 400
 for epoch in range(num_epochs):
     for inputs, labels in train_loader:
         optimizer.zero_grad()
