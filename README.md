@@ -1,5 +1,4 @@
 
-```markdown
 # Taylor Swift Tracks Classification Project
 
 This project focuses on classifying Taylor Swift's tracks based on whether they belong to her past "stolen" albums or her re-released "Taylor's Version" albums that were recorded recently. The classification is done using logistic regression with PyTorch.
@@ -42,4 +41,3 @@ The classification results, including accuracy, precision, recall, and F1 score,
 You can follow these instructions to replicate the project on your own machine and experiment with the code. Happy coding Swifties!
 **Disclaimer:** This project is intended for educational purposes only. The classification of Taylor Swift's tracks is based on fictional scenarios and does not represent any real-world situation or endorsement by the artist. All rights to the music and related materials belong to their respective owners.
 
-```
