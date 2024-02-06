@@ -34,9 +34,6 @@ The data consists of various features extracted from Taylor Swift's tracks, incl
 
 Logistic regression is used as the classification model in this project. PyTorch is employed to implement the logistic regression model.
 
-## Results
-
-The classification results, including accuracy, precision, recall, and F1 score, are displayed after training the model. Additionally, feature importance analysis is performed to identify the most significant features.
   
 You can follow these instructions to replicate the project on your own machine and experiment with the code. Happy coding Swifties!
 **Disclaimer:** This project is intended for educational purposes only. The classification of Taylor Swift's tracks is based on fictional scenarios and does not represent any real-world situation or endorsement by the artist. All rights to the music and related materials belong to their respective owners.
